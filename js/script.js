@@ -14,11 +14,11 @@ var app = new Vue (
         //   this.movies = response.data.results;
         // });
 
-        // static request to the server
+        // dinamic request to the server
         axios.get('https://api.themoviedb.org/3/search/movie',{
           params:{
             api_key:"bb946051787722f6361023f25c0639b5",
-            query:"ritorno al fut",
+            query:this.userTitle,
             language:"it-IT"
           }
         })
