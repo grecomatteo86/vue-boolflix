@@ -36,23 +36,27 @@
     <!-- main -->
     <main class="main_section">
       <!-- poster -->
-      <div class="movie_container">
+      <div class="movie_container" v-for="item in movies">
         <!-- side_a -->
-        <img class="movie_image" src="https://image.tmdb.org/t/p/w400/1J1e8Uslw8MAE7mIVFh6TU9mPt8.jpg" alt="">
+        <img class="movie_image" :src="item.poster_path" alt="">
         <!-- /side_a -->
         <!-- side_b -->
         <div class="side_b">
           <div class="informal_title">
             <h2 class="movie_features">Titolo:</h2>
+            <p class="response_features">{{item.title}}</p>
           </div>
           <div class="original_title">
             <h2 class="movie_features">Titolo Originale:</h2>
+            <p class="response_features">{{item.original_title}}</p>
           </div>
           <div class="language_title">
             <h2 class="movie_features">Lingua:</h2>
+            <p class="response_features">{{item.original_language}}</p>
           </div>
           <div class="vote_title">
             <h2 class="movie_features">Voto:</h2>
+            <p class="response_features">{{item.vote_average}}</p>
           </div>
         </div>
         <!-- /side_b -->
