@@ -27,7 +27,7 @@
       <!-- /logo -->
       <!-- input -->
       <div class="input_container">
-        <input v-model="userTitle" class="search_field" type="text" name="" value="" placeholder="inserisci titolo">
+        <input v-on:keyup.13="searchTitle" v-model="userTitle" class="search_field" type="text" name="" value="" placeholder="inserisci titolo">
         <button @click="searchTitle" type="button" name="button">Cerca</button>
       </div>
       <!-- /input -->

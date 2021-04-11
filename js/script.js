@@ -26,6 +26,7 @@ var app = new Vue (
           // console.log(response);
           this.movies = response.data.results;
         });
+        this.userTitle = '';
       }
     }
   }
