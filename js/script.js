@@ -4,7 +4,8 @@ var app = new Vue (
     data:{
       userTitle:'',
       movies:[
-      ]
+      ],
+      myClass:"",
     },
     methods:{
       searchTitle: function(){
@@ -26,6 +27,10 @@ var app = new Vue (
           // console.log(response);
           this.movies = response.data.results;
         });
+        if ('https://image.tmdb.org/t/p/w300null') {
+          this.myClass = 'default_image';
+        }
+
         this.userTitle = '';
       }
     }

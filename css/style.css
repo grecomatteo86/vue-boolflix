@@ -102,3 +102,9 @@ body{
 .movie_container:hover .side_b{
   display: block;
 }
+
+.default_image{
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoWcWg0E8pSjBNi0TtiZsqu8uD2PAr_K11DA&usqp=CAU');
+  background-position: center;
+  background-size: cover;
+}

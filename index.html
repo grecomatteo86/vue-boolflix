@@ -36,7 +36,7 @@
     <!-- main -->
     <main class="main_section">
       <!-- poster -->
-      <div class="movie_container" v-for="item in movies">
+      <div class="movie_container" v-for="item in movies" v-bind:class="myClass">
         <!-- side_a -->
         <img class="movie_image" :src="`https://image.tmdb.org/t/p/w300${item.poster_path}`" :alt="item.title">
         <!-- /side_a -->
