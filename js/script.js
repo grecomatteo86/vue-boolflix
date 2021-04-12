@@ -12,6 +12,7 @@ var app = new Vue (
       ],
       userTitle:'',
       movies:[],
+      series:[],
       myClass:"",
     },
     methods:{
@@ -23,6 +24,7 @@ var app = new Vue (
         // });
 
         // dynamic request to the server
+        //for movies
         axios.get( this.baseUrl + 'movie',{
           params:{
             api_key:this.apiKey,
@@ -33,6 +35,18 @@ var app = new Vue (
         .then((response) => {
           // console.log(response);
           this.movies = response.data.results;
+        });
+        //for tv series
+        axios.get( this.baseUrl + 'tv',{
+          params:{
+            api_key:this.apiKey,
+            query:this.userTitle,
+            language:this.languages[this.selectedLanguageIndex]
+          }
+        })
+        .then((response) => {
+          // console.log(response);
+          this.series = response.data.results;
         });
         if ('https://image.tmdb.org/t/p/w300null') {
           this.myClass = 'default_image';
