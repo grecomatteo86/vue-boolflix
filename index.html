@@ -52,7 +52,12 @@
           </div>
           <div class="language_title">
             <h2 class="movie_features">Lingua:</h2>
-            <p class="response_features">{{item.original_language}}</p>
+            <div class="language_wrapper">
+              <p class="response_features">{{item.original_language}}</p>
+              <div class="flags_container">
+                <img v-if="myFlags.includes(item.original_language)" :src="`css/img/flags/` + item.original_language + `.svg`" :alt="item.original_language + `flag`">
+              </div>
+            </div>
           </div>
           <div class="vote_title">
             <h2 class="movie_features">Voto:</h2>

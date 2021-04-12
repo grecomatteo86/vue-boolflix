@@ -8,12 +8,27 @@ var app = new Vue (
       languages:[
         'it-IT',
         'en-US',
-        'es-ES'
+        'es-ES',
+        'sv-SE',
+        'hr-HR',
+        'fr-FR',
+        'de-DE',
+        'pt-PT'
       ],
       userTitle:'',
       movies:[],
       series:[],
       myClass:"",
+      myFlags:[
+        'de',
+        'en',
+        'es',
+        'fr',
+        'hr',
+        'it',
+        'pt',
+        'sv'
+      ]
     },
     methods:{
       searchTitle: function(){
