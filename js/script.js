@@ -27,7 +27,20 @@ var app = new Vue (
         'hr',
         'it',
         'pt',
-        'sv'
+        'sv',
+        'no',
+        'ko',
+        'ja',
+        'sr',
+        'zh',
+        'eu',
+        'fa',
+        'vi',
+        'tr',
+        'da',
+        'ms',
+        'id',
+        'th'
       ]
     },
     methods:{
