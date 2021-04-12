@@ -44,11 +44,11 @@
         <div class="side_b">
           <div class="informal_title">
             <h2 class="movie_features">Titolo:</h2>
-            <p class="response_features">{{item.title}}</p>
+            <p class="response_features">{{item.title || item.name}}</p>
           </div>
           <div class="original_title">
             <h2 class="movie_features">Titolo Originale:</h2>
-            <p class="response_features">{{item.original_title}}</p>
+            <p class="response_features">{{item.original_title || item.original_name}}</p>
           </div>
           <div class="language_title">
             <h2 class="movie_features">Lingua:</h2>
