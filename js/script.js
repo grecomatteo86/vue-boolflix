@@ -45,12 +45,19 @@ var app = new Vue (
           }
         })
         .then((response) => {
-          // console.log(response);
           this.series = response.data.results;
+          //cycle every obj in series array to push them in one array (movies)
+          this.series.forEach((item) => {
+            // console.log(item);
+            this.movies.push(item);
+          });
+          // console.log(this.movies);
         });
+        //default_image when item.poster_path == null
         if ('https://image.tmdb.org/t/p/w300null') {
           this.myClass = 'default_image';
         }
+        //cleaning
         this.userTitle = '';
       }
     }
