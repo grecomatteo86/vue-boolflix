@@ -80,6 +80,10 @@ var app = new Vue (
             this.movies.push(item);
           });
           // console.log(this.movies);
+          //cycle every vote.average in movies array to apply Math.ceil function
+          this.movies.forEach((item) => {
+            console.log(item.vote_average);
+          });
         });
         //default_image when item.poster_path == null
         if ('https://image.tmdb.org/t/p/w300null') {
