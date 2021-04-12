@@ -2,9 +2,16 @@ var app = new Vue (
   {
     el:"#app",
     data:{
-      userTitle:'',
-      movies:[
+      baseUrl:'https://api.themoviedb.org/3/search/',
+      apiKey:'bb946051787722f6361023f25c0639b5',
+      selectedLanguageIndex: 0,
+      languages:[
+        'it-IT',
+        'en-US',
+        'es-ES'
       ],
+      userTitle:'',
+      movies:[],
       myClass:"",
     },
     methods:{
@@ -15,12 +22,12 @@ var app = new Vue (
         //   this.movies = response.data.results;
         // });
 
-        // dinamic request to the server
-        axios.get('https://api.themoviedb.org/3/search/movie',{
+        // dynamic request to the server
+        axios.get( this.baseUrl + 'movie',{
           params:{
-            api_key:"bb946051787722f6361023f25c0639b5",
+            api_key:this.apiKey,
             query:this.userTitle,
-            language:"it-IT"
+            language:this.languages[this.selectedLanguageIndex]
           }
         })
         .then((response) => {
@@ -30,7 +37,6 @@ var app = new Vue (
         if ('https://image.tmdb.org/t/p/w300null') {
           this.myClass = 'default_image';
         }
-
         this.userTitle = '';
       }
     }
