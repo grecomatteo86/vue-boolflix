@@ -17,7 +17,6 @@ var app = new Vue (
       ],
       userTitle:'',
       moviesAndSeries:[],
-      myClass:"",
       myFlags:[
         'de',
         'en',
@@ -83,10 +82,6 @@ var app = new Vue (
               item.vote_average = Math.ceil(item.vote_average / 2);
             });
           });
-          //default_image when item.poster_path == null
-          if ('https://image.tmdb.org/t/p/w300null') {
-            this.myClass = 'default_image';
-          }
           //cleaning
           this.userTitle = '';
         }
