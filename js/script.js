@@ -81,6 +81,8 @@ var app = new Vue (
               // console.log(item.vote_average);
               item.vote_average = Math.ceil(item.vote_average / 2);
             });
+            //sorting movies and series by vote average (from high to low)
+            this.moviesAndSeries.sort((a,b) => (a.vote_average > b.vote_average) ? -1 : 1);
           });
           //cleaning
           this.userTitle = '';
