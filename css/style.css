@@ -59,18 +59,27 @@ body{
   width: 15%;
   background-color: #000;
   margin: 15px;
+  position: relative;
 }
 .movie_image{
   width: 100%;
   height: 100%;
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0.5s, opacity 0.5s ease-in;
 }
 /* side_b */
 .side_b{
-  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-color: #000;
-  height: 100%;
-  width: 100%;
   padding: 7px;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.5s, opacity 0.5s ease-out;
 }
 .informal_title,
 .original_title,
@@ -124,9 +133,11 @@ body{
 /* /footer */
 /* hover_effects */
 .movie_container:hover .movie_image{
-  display: none;
+  visibility: hidden;
+  opacity: 0;
 }
 .movie_container:hover .side_b{
-  display: block;
+  visibility: visible;
+  opacity: 1;
 }
 /* /hover_effects */
