@@ -47,11 +47,11 @@
         <div class="side_b">
           <div class="informal_title">
             <h2 class="movie_features">Titolo:</h2>
-            <p class="response_features">{{item.title || item.name}}</p>
+            <p class="response_features clamp">{{item.title}}{{item.name}}</p>
           </div>
           <div class="original_title">
             <h2 class="movie_features">Titolo Originale:</h2>
-            <p class="response_features">{{item.original_title || item.original_name}}</p>
+            <p class="response_features clamp">{{item.original_title}}{{item.original_name}}</p>
           </div>
           <div class="language_title">
             <h2 class="movie_features">Lingua:</h2>
@@ -64,7 +64,7 @@
           </div>
           <div v-if="item.overview" class="overview_title">
             <h2 class="movie_features">Overview:</h2>
-            <p class="response_features overview">{{item.overview}}</p>
+            <p class="response_features clamp">{{item.overview}}</p>
           </div>
           <div class="vote_title">
             <h2 class="movie_features">Voto:</h2>
