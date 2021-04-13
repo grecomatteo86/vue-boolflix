@@ -48,12 +48,12 @@ body{
   flex-wrap: wrap;
   overflow: auto;
 }
-/* .instruction{
+.instruction{
   font-size: 40px;
   -webkit-text-fill-color: red;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
-} */
+}
 .movie_container{
   height: 45%;
   width: 15%;

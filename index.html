@@ -38,8 +38,11 @@
     <!-- /header -->
     <!-- main -->
     <main class="main_section">
+      <div v-if="moviesAndSeries.length == 0" class="">
+        <h2 class="instruction">Benvenuto in Netflix! Ricerca un titolo...</h2>
+      </div>
       <!-- poster -->
-      <div class="movie_container" v-for="item in moviesAndSeries" v-bind:class="myClass">
+      <div v-else class="movie_container" v-for="item in moviesAndSeries" v-bind:class="myClass">
         <!-- side_a -->
         <img class="movie_image" :src="(item.poster_path ? `https://image.tmdb.org/t/p/w300` + item.poster_path : 'https://product-image.juniqe-production.juniqe.com/media/catalog/product/seo-cache/x800/284/191/284-191-101P/Charlie-Chaplin-Rob-Snow-Creative-Poster.jpg')" :alt="item.title">
         <!-- /side_a -->
