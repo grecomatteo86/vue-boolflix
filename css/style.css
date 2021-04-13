@@ -75,9 +75,9 @@ body{
 .informal_title,
 .original_title,
 .language_title,
+.overview_title,
 .vote_title{
-  height: 25%;
-  border: 1px solid white;
+  padding:5px 0;
 }
 .movie_features{
   font-size: 14px;
@@ -91,6 +91,12 @@ body{
 .response_features{
   font-size: 10px;
   color:#fff;
+}
+.overview{
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .flags_container{
   height: 30px;

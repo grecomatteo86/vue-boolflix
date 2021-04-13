@@ -62,6 +62,10 @@
               </div>
             </div>
           </div>
+          <div v-if="item.overview" class="overview_title">
+            <h2 class="movie_features">Overview:</h2>
+            <p class="response_features overview">{{item.overview}}</p>
+          </div>
           <div class="vote_title">
             <h2 class="movie_features">Voto:</h2>
             <!-- <p class="response_features">{{item.vote_average}}</p> -->
