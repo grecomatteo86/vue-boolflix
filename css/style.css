@@ -31,8 +31,9 @@ body{
   justify-content: center;
   align-items: center;
 }
-.main_title{
-  color: red;
+.logo_container>img{
+  width: 70%;
+  height: 70%;
 }
 .search_field{
   margin-right: 10px;
