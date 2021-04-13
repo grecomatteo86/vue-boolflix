@@ -65,6 +65,7 @@
           <div class="vote_title">
             <h2 class="movie_features">Voto:</h2>
             <!-- <p class="response_features">{{item.vote_average}}</p> -->
+            <p v-if="item.vote_average == 0" class="response_features"><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
             <p v-if="item.vote_average == 1" class="response_features"><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
             <p v-if="item.vote_average == 2" class="response_features"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
             <p v-if="item.vote_average == 3" class="response_features"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
