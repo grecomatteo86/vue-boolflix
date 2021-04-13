@@ -60,6 +60,8 @@ body{
   background-color: #000;
   margin: 15px;
   position: relative;
+  border-radius: 10px;
+  overflow: hidden;
 }
 .movie_image{
   width: 100%;
@@ -110,10 +112,15 @@ body{
 .flags_container{
   height: 30px;
   width: 30px;
+  border-radius: 50%;
+  overflow: hidden;
 }
 .flags_container img{
   width: 100%;
   height: 100%;
+}
+.plain{
+  color: yellow;
 }
 /* /side_b */
 /* /main */
