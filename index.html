@@ -59,6 +59,7 @@
               <p class="response_features">{{item.original_language}}</p>
               <div class="flags_container">
                 <img v-if="myFlags.includes(item.original_language)" :src="`css/img/flags/` + item.original_language + `.svg`" :alt="item.original_language + `flag`">
+                <img v-else src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoimwF82SSaaCeTufe0r-lx0go1p4UMqY2DkzyhAOFbIZjqdFXx4FNl6kAc-SCcVnoLQg&usqp=CAU" alt="pace_flag">
               </div>
             </div>
           </div>

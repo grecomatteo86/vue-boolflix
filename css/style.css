@@ -101,9 +101,8 @@ body{
 .flags_container{
   height: 30px;
   width: 30px;
-  background-color: red;
 }
-.flags_container>img{
+.flags_container img{
   width: 100%;
   height: 100%;
 }
