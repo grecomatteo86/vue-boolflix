@@ -46,22 +46,10 @@ var app = new Vue (
       searchTitle: function(){
         if (this.userTitle != '') {
           if (this.selected == 'All') {
-            //cleaning the array moviesAndSeries at every event (without page reload) because of push
+            //cleaning moviesAndSeries array at every event (without page reload) because of push
             this.moviesAndSeries = [];
             this.moviesAxios();
-            //axios for TV SERIES
-            axios.get( this.baseUrl + 'tv',{
-              params:{
-                api_key:this.apiKey,
-                query:this.userTitle,
-                language:this.languages[this.selectedLanguageIndex]
-              }
-            })
-            .then((response) => {
-              this.moviesAndSeries.push(...response.data.results);
-              this.roundVote(this.moviesAndSeries);
-              this.sortingVote(this.moviesAndSeries);
-            });
+            this.seriesAxios();
             //cleaning input
             this.userTitle = '';
           } else if (this.selected == 'Movies') {
@@ -70,18 +58,7 @@ var app = new Vue (
             this.userTitle = '';
           } else if (this.selected == 'Series') {
             this.moviesAndSeries = [];
-            axios.get( this.baseUrl + 'tv',{
-              params:{
-                api_key:this.apiKey,
-                query:this.userTitle,
-                language:this.languages[this.selectedLanguageIndex]
-              }
-            })
-            .then((response) => {
-              this.moviesAndSeries.push(...response.data.results);
-              this.roundVote(this.moviesAndSeries);
-              this.sortingVote(this.moviesAndSeries);
-            });
+            this.seriesAxios();
             this.userTitle = '';
           }
         }
@@ -114,6 +91,21 @@ var app = new Vue (
         .then((response) => {
           // console.log(response);
           //push with spread operator
+          this.moviesAndSeries.push(...response.data.results);
+          this.roundVote(this.moviesAndSeries);
+          this.sortingVote(this.moviesAndSeries);
+        });
+      },
+      seriesAxios:function () {
+        //axios for TV SERIES
+        axios.get( this.baseUrl + 'tv',{
+          params:{
+            api_key:this.apiKey,
+            query:this.userTitle,
+            language:this.languages[this.selectedLanguageIndex]
+          }
+        })
+        .then((response) => {
           this.moviesAndSeries.push(...response.data.results);
           this.roundVote(this.moviesAndSeries);
           this.sortingVote(this.moviesAndSeries);
