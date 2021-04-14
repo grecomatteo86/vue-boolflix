@@ -48,6 +48,15 @@ body{
 }
 .search_field{
   margin-right: 10px;
+  color: red;
+  background-color: transparent;
+  border: none;
+}
+.search_field:focus {
+  outline: none;
+}
+::placeholder{
+  color: red;
 }
 .select_container{
   margin-right: 10px;
