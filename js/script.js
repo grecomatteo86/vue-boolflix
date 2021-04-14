@@ -45,7 +45,7 @@ var app = new Vue (
     methods:{
       searchTitle: function(){
         if (this.userTitle != '') {
-          if (this.selected == 'All') {
+          if (this.selected == '') {
             //cleaning moviesAndSeries array at every event (without page reload) because of push
             this.moviesAndSeries = [];
             this.moviesAxios();
