@@ -31,6 +31,13 @@
       <!-- input -->
       <div class="input_container">
         <input v-on:keyup.13="searchTitle" v-model="userTitle" class="search_field" type="text" name="" value="" placeholder="inserisci titolo">
+        <div class="select_container">
+          <select v-model="selected" class="" name="">
+            <option value="All">All</option>
+            <option value="Movies">Movies</option>
+            <option value="Series">Series</option>
+          </select>
+        </div>
         <button @click="searchTitle" type="button" name="button">Cerca</button>
       </div>
       <!-- /input -->

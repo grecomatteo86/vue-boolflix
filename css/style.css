@@ -38,6 +38,9 @@ body{
 .search_field{
   margin-right: 10px;
 }
+.select_container{
+  margin-right: 10px;
+}
 /* /header */
 /* main */
 .main_section{

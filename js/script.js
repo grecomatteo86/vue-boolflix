@@ -39,7 +39,8 @@ var app = new Vue (
         'ms',
         'id',
         'th'
-      ]
+      ],
+      selected:''
     },
     methods:{
       searchTitle: function(){
