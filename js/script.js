@@ -63,6 +63,9 @@ var app = new Vue (
           }
         }
       },
+      deleteItem: function(index){
+        this.moviesAndSeries.splice(index,1);
+      },
       roundVote:function (params) {
         //cycle every vote.average in movies array to apply Math.ceil function
         params.forEach((item) => {
