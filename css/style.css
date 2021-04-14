@@ -52,14 +52,27 @@ body{
   background-color: transparent;
   border: none;
 }
-.search_field:focus {
-  outline: none;
-}
 ::placeholder{
   color: red;
 }
 .select_container{
   margin-right: 10px;
+}
+.input_button,
+.select_input{
+  cursor: pointer;
+  background-color: red;
+  border: 2px solid black;
+  padding: 5px;
+  border-radius: 5px;
+}
+.select_input{
+  padding: 4px;
+}
+.search_field:focus,
+.input_button:focus,
+.select_input:focus {
+  outline: none;
 }
 /* /header */
 /* main */
