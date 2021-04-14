@@ -30,7 +30,10 @@
       <!-- /logo -->
       <!-- input -->
       <div class="input_container">
-        <input v-on:keyup.13="searchTitle" v-model="userTitle" class="search_field" type="text" name="" value="" placeholder="inserisci titolo">
+        <div class="search_container">
+          <i v-on:click="isShown = true" class="fas fa-search"></i>
+          <input v-if="isShown" v-on:keyup.13="searchTitle" v-model="userTitle" class="search_field" type="text" name="" value="" placeholder="inserisci titolo">
+        </div>
         <div class="select_container">
           <select v-model="selected" class="" name="">
             <option value="">All</option>

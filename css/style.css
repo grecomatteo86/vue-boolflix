@@ -31,9 +31,20 @@ body{
   justify-content: center;
   align-items: center;
 }
+.search_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .logo_container>img{
   width: 70%;
   height: 70%;
+}
+.fa-search{
+  color: red;
+  margin-right: 10px;
+  font-size: 12px;
+  cursor: pointer;
 }
 .search_field{
   margin-right: 10px;

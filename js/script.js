@@ -40,7 +40,8 @@ var app = new Vue (
         'id',
         'th'
       ],
-      selected:''
+      selected:'',
+      isShown: false
     },
     methods:{
       searchTitle: function(){
