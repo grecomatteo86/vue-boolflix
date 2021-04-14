@@ -84,12 +84,7 @@
           <div class="vote_title">
             <h2 class="movie_features">Voto:</h2>
             <!-- <p class="response_features">{{item.vote_average}}</p> -->
-            <p v-if="item.vote_average == 0" class="response_features"><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
-            <p v-if="item.vote_average == 1" class="response_features"><i class="fas fa-star plain"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
-            <p v-if="item.vote_average == 2" class="response_features"><i class="fas fa-star plain"></i><i class="fas fa-star plain"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
-            <p v-if="item.vote_average == 3" class="response_features"><i class="fas fa-star plain"></i><i class="fas fa-star plain"></i><i class="fas fa-star plain"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
-            <p v-if="item.vote_average == 4" class="response_features"><i class="fas fa-star plain"></i><i class="fas fa-star plain"></i><i class="fas fa-star plain"></i><i class="fas fa-star plain"></i><i class="far fa-star"></i></p>
-            <p v-if="item.vote_average == 5" class="response_features"><i class="fas fa-star plain"></i><i class="fas fa-star plain"></i><i class="fas fa-star plain"></i><i class="fas fa-star plain"></i><i class="fas fa-star plain"></i></p>
+            <p class="response_features"><i v-for="n in 5" class="fas fa-star" :class="{'plain': item.vote_average >= n}"></i></p>
           </div>
           <div @click="deleteItem(index)" class="deleter">
             <span class="close">X</span>
