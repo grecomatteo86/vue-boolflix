@@ -45,7 +45,6 @@ var app = new Vue (
     methods:{
       searchTitle: function(){
         if (this.userTitle != '') {
-
           if (this.selected == 'All') {
             // STATIC request to the server
             // axios.get('https://api.themoviedb.org/3/search/movie?api_key=bb946051787722f6361023f25c0639b5&query=ritorno+al+fut&language=it-IT')
@@ -79,11 +78,7 @@ var app = new Vue (
             })
             .then((response) => {
               this.moviesAndSeries.push(...response.data.results);
-              //cycle every vote.average in movies array to apply Math.ceil function
-              this.moviesAndSeries.forEach((item) => {
-                // console.log(item.vote_average);
-                item.vote_average = Math.ceil(item.vote_average / 2);
-              });
+              this.roundVote(this.moviesAndSeries);
               //sorting movies and series by vote average (from high to low)
               this.moviesAndSeries.sort((a,b) => (a.vote_average > b.vote_average) ? -1 : 1);
             });
@@ -100,9 +95,7 @@ var app = new Vue (
             })
             .then((response) => {
               this.moviesAndSeries.push(...response.data.results);
-              this.moviesAndSeries.forEach((item) => {
-                item.vote_average = Math.ceil(item.vote_average / 2);
-              });
+              this.roundVote(this.moviesAndSeries);
               this.moviesAndSeries.sort((a,b) => (a.vote_average > b.vote_average) ? -1 : 1);
             });
             this.userTitle = '';
@@ -117,14 +110,19 @@ var app = new Vue (
             })
             .then((response) => {
               this.moviesAndSeries.push(...response.data.results);
-              this.moviesAndSeries.forEach((item) => {
-                item.vote_average = Math.ceil(item.vote_average / 2);
-              });
+              this.roundVote(this.moviesAndSeries);
               this.moviesAndSeries.sort((a,b) => (a.vote_average > b.vote_average) ? -1 : 1);
             });
             this.userTitle = '';
           }
         }
+      },
+      roundVote:function (params) {
+        //cycle every vote.average in movies array to apply Math.ceil function
+        params.forEach((item) => {
+          // console.log(item.vote_average);
+          item.vote_average = Math.ceil(item.vote_average / 2);
+        });
       }
     }
   }
