@@ -79,8 +79,7 @@ var app = new Vue (
             .then((response) => {
               this.moviesAndSeries.push(...response.data.results);
               this.roundVote(this.moviesAndSeries);
-              //sorting movies and series by vote average (from high to low)
-              this.moviesAndSeries.sort((a,b) => (a.vote_average > b.vote_average) ? -1 : 1);
+              this.sortingVote(this.moviesAndSeries);
             });
             //cleaning
             this.userTitle = '';
@@ -96,7 +95,7 @@ var app = new Vue (
             .then((response) => {
               this.moviesAndSeries.push(...response.data.results);
               this.roundVote(this.moviesAndSeries);
-              this.moviesAndSeries.sort((a,b) => (a.vote_average > b.vote_average) ? -1 : 1);
+              this.sortingVote(this.moviesAndSeries);
             });
             this.userTitle = '';
           } else if (this.selected == 'Series') {
@@ -111,7 +110,7 @@ var app = new Vue (
             .then((response) => {
               this.moviesAndSeries.push(...response.data.results);
               this.roundVote(this.moviesAndSeries);
-              this.moviesAndSeries.sort((a,b) => (a.vote_average > b.vote_average) ? -1 : 1);
+              this.sortingVote(this.moviesAndSeries);
             });
             this.userTitle = '';
           }
@@ -123,6 +122,10 @@ var app = new Vue (
           // console.log(item.vote_average);
           item.vote_average = Math.ceil(item.vote_average / 2);
         });
+      },
+      sortingVote:function (params) {
+        //sorting movies and series by vote average (from high to low)
+        params.sort((a,b) => (a.vote_average > b.vote_average) ? -1 : 1);
       }
     }
   }
