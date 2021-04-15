@@ -84,7 +84,7 @@
           <div class="vote_title">
             <h2 class="movie_features">Voto:</h2>
             <!-- <p class="response_features">{{item.vote_average}}</p> -->
-            <p class="response_features"><i v-for="n in 5" class="fas fa-star" :class="{'plain': item.vote_average >= n}"></i></p>
+            <p class="response_features"><i v-for="n in 5" class="fa-star" :class="n <= item.vote_average ? 'fas' : 'far'"></i></p>
           </div>
           <div @click="deleteItem(index)" class="deleter">
             <span class="close">X</span>

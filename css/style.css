@@ -157,9 +157,6 @@ body{
   width: 100%;
   height: 100%;
 }
-.plain{
-  color: yellow;
-}
 .deleter{
   position: absolute;
   top:5px;
